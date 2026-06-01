@@ -1,0 +1,156 @@
+body{
+
+    background: linear-gradient(
+        135deg,
+        #fff8dc,
+        #fff3b0,
+        #fde68a
+    );
+
+    min-height:100vh;
+
+    font-family:'Segoe UI',sans-serif;
+
+    padding:10px;
+}
+
+
+/* Main Container */
+
+.main-card{
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:40px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+}
+
+
+/* Heading */
+
+.app-title{
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    color:#222;
+}
+
+
+/* Welcome text */
+
+.welcome{
+
+    color:#666;
+
+    font-size:20px;
+}
+
+
+/* Input */
+
+.task-input{
+
+    border-radius:15px;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+}
+
+
+/* Add Task Button */
+
+.add-btn{
+
+    background:#facc15;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:15px;
+
+    font-weight:600;
+}
+
+.add-btn:hover{
+
+    background:#eab308;
+}
+
+
+/* Task Card */
+
+.task-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.08);
+}
+
+
+/* Status Badges */
+
+.completed-badge{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-weight:600;
+}
+
+.pending-badge{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-weight:600;
+}
+
+
+/* Buttons */
+
+.complete-btn{
+
+    background:#22c55e;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+}
+
+.delete-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+}

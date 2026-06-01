@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="main-card">
+
+    <h1 class="app-title">
+        SunnyTasks ☀️
+    </h1>
+
+    <h4>
+    Welcome {{ request.user.username }}
+</h4>
+
+
+    <br>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="task_title"
+            class="form-control mb-3"
+            placeholder="Enter a task..."
+        >
+
+        <button
+            class="btn btn-warning"
+            type="submit">
+
+            Add Task
+
+        </button>
+
+    </form>
+
+    <hr>
+
+    <h3>Your Tasks</h3>
+
+    {% for task in tasks %}
+
+        <div class="task-card">
+
+            {% if task.completed %}
+
+                <h5 style="text-decoration:line-through;">
+                    {{ task.title }}
+                </h5>
+
+                <span class="badge bg-success">
+                    Completed
+                </span>
+
+            {% else %}
+
+                <h5>
+    {% if task.completed %}
+        ✅ {{ task.title }}
+    {% else %}
+        ⬜ {{ task.title }}
+    {% endif %}
+</h5>
+
+                <span class="badge bg-warning text-dark">
+                    Pending
+                </span>
+
+            {% endif %}
+
+            <br><br>
+
+            <a
+                href="{% url 'complete_task' task.id %}"
+                class="btn btn-success btn-sm">
+
+                Complete
+
+            </a>
+
+            <a
+                href="{% url 'delete_task' task.id %}"
+                class="btn btn-danger btn-sm">
+
+                Delete
+
+            </a>
+
+        </div>
+
+    {% empty %}
+
+        <p>No tasks yet.</p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
